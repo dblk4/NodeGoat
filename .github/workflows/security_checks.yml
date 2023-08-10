@@ -16,10 +16,10 @@ jobs:
          run: docker-compose up --detach
 
        - name: OWASP ZAP
-         uses: zaproxy/action-baseline@v0.4.0
+         uses: zaproxy/action-baseline@v0.9.0
          with:
            # Target URL
            target: "http://localhost:4000"
            fail_action: false
-           token: ${{ secrets.GITHUB_TOKEN }}
+           token: ${{ github.token }}
            issue_title: Security Tests
